@@ -5,7 +5,7 @@ import s from './ContactForm.module.css';
 const INITIAL_FORM_STATE = { name: '', number: '' };
 
 class ContactForm extends Component {
-  static propTypes = { changeContacts: PropTypes.func.isRequired };
+  static propTypes = { addContact: PropTypes.func.isRequired };
 
   state = { name: '', number: '' };
 
@@ -22,7 +22,7 @@ class ContactForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    this.props.changeContacts(this.state.name, this.state.number);
+    this.props.addContact(this.state.name, this.state.number);
     this.resetForm();
   };
 
